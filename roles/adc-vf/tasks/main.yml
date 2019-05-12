@@ -1,0 +1,14 @@
+---
+- import_tasks: a10_health_monitor.yaml
+- import_tasks: a10_file_ssl_key.yml
+- import_tasks: a10_file_ssl_cert.yml
+- import_tasks: a10_slb_template_client_ssl.yml
+- import_tasks: a10_slb_template_server_ssl.yml
+- import_tasks: a10_ip_nat_pool.yml
+- import_tasks: a10_slb_server.yaml
+- import_tasks: a10_slb_service_group.yaml
+- import_tasks: a10_slb_service_group_member.yaml
+- import_tasks: a10_slb_virtual_server.yaml
+- import_tasks: a10_slb_virtual_server_port.yaml
+
+

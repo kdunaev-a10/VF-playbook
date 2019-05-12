@@ -1,0 +1,5 @@
+---
+- hosts: 
+     - adc-vf-1
+  roles:
+     - adc-vf

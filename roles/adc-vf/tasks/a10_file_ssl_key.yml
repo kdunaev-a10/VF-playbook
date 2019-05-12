@@ -1,0 +1,8 @@
+- name: "Create ssl key "
+  a10_file_ssl_key:
+      a10_host: "{{ inventory_hostname }}"
+      a10_username: "{{ a10_username }}"
+      a10_password: "{{ a10_password }}"
+      file: VF_TEST
+      file_content: "{{lookup('file', '/etc/ansible/roles/adc-vf/files/key.pem')}}"
+      action: import

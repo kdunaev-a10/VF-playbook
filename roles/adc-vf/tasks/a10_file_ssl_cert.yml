@@ -1,0 +1,10 @@
+- name: "Create ssl cert "
+  a10_file_ssl_cert_update:
+      a10_host: "{{ inventory_hostname }}"
+      a10_username: "{{ a10_username }}"
+      a10_password: "{{ a10_password }}"
+      file: VF_TEST
+      certificate_type: pem
+      file_content: "{{lookup('file', '/etc/ansible/roles/adc-vf/files/cert.pem')}}"
+      action: import
+

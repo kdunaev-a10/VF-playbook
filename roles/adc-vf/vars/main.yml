@@ -1,0 +1,10 @@
+---
+# vars file for adc
+env_type: '2'
+type_env: 'INT'
+env_code: '1'
+tenant: 'PRODUCT'
+tenant_lc: 'product'
+tenant_id: 'IP'
+domain: 'integ.itf.corp'
+

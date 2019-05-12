@@ -1,0 +1,33 @@
+---
+- name: Create a10_slb_virtual_server_port instance
+  a10_slb_virtual_server_port:
+      a10_host: "{{ inventory_hostname }}"
+      a10_username: "{{ a10_username }}"
+      a10_password: "{{ a10_password }}"
+      a10_port: "{{ a10_port }}"
+      a10_protocol: "{{ a10_protocol }}"
+      virtual_server_name: "apirulez.com"
+      port_number: 8080
+      protocol: http
+      conn_limit: 1
+      action: enable
+      service_group: apirulez_v4
+      pool: "snat"
+ 
+- name: Create a10_slb_virtual_server_port instance
+  a10_slb_virtual_server_port:
+      a10_host: "{{ inventory_hostname }}"
+      a10_username: "{{ a10_username }}"
+      a10_password: "{{ a10_password }}"
+      a10_port: "{{ a10_port }}"
+      a10_protocol: "{{ a10_protocol }}"
+      virtual_server_name: "apirulez.com"
+      port_number: 8443
+      protocol: https
+      conn_limit: 1
+      action: enable
+      service_group: apirulez_v4
+      template_client_ssl: CLIENT_SSL_TMPL
+      template_server_ssl: SERVER_SSL_TMPL
+      pool: "snat"
+
