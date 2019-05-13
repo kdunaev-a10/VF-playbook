@@ -1,0 +1,9 @@
+- name: Create a10_ip_nat_pool example playbook
+  a10_ip_nat_pool:
+      a10_host: "{{ inventory_hostname }}"
+      a10_username: "{{ a10_username }}"
+      a10_password: "{{ a10_password }}"
+      start_address: "10.60.0.10"
+      end_address: "10.60.0.10"
+      pool_name: "snat"
+      netmask: "/24"

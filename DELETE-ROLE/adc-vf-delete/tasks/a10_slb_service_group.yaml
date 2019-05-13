@@ -1,0 +1,15 @@
+---
+- name: Create a10_slb_service_group instance
+  a10_slb_service_group:
+      a10_host: "{{ inventory_hostname }}"
+      a10_username: "{{ a10_username }}"
+      a10_password: "{{ a10_password }}"
+      a10_port: "{{ a10_port }}"
+      a10_protocol: "{{ a10_protocol }}"
+      state: "{{ var_state }}"
+      name: apirulez_v4
+      protocol: tcp
+      lb_method: round-robin
+      stats_data_action: stats-data-enable
+      min_active_member_action: dynamic-priority
+      min_active_member: 2

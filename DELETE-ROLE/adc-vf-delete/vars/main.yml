@@ -1,0 +1,3 @@
+---
+# vars file for adc
+var_state: "absent"

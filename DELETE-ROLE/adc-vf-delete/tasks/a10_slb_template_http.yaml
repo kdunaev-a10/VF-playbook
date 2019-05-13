@@ -1,0 +1,15 @@
+- name: Create a10_slb_template_http instance
+  a10_slb_template_http:
+      a10_host: "{{ inventory_hostname }}"
+      a10_username: "{{ a10_username }}"
+      a10_password: "{{ a10_password }}"
+      a10_port: "{{ a10_port }}"
+      a10_protocol: "{{ a10_protocol }}"
+      state: "{{ var_state }}"
+      name: "redirect_apirulez"
+      compression_level: 1
+      compression_minimum_content_length: 120
+      redirect: 1
+      rd_secure: 1
+      rd_port: 8443
+      rd_resp_code: 301

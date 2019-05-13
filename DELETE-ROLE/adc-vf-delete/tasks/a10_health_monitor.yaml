@@ -1,0 +1,20 @@
+- name: Create a10_health_monitor example playbook
+  a10_health_monitor:
+      a10_host: "{{ inventory_hostname }}"
+      a10_username: "{{ a10_username }}"
+      a10_password: "{{ a10_password }}"
+      a10_port: "{{ a10_port }}"
+      a10_protocol: "{{ a10_protocol }}"
+      state: "{{ var_state }}"
+      method: {
+        "https": {
+          "https":1,
+          "web-port":443,
+          "https-host":"apirulez.com",
+          "https-url":1,
+          "url-type":"GET",
+          "url-path":"/index.html",
+          "disable-sslv2hello":0,
+        }
+      }
+      name: "HTTPS_apirulez.com"

@@ -1,0 +1,17 @@
+---
+- name: Create a10_slb_server_port instance
+  a10_slb_server_port:
+      a10_host: "{{ inventory_hostname }}"
+      a10_username: "{{ a10_username }}"
+      a10_password: "{{ a10_password }}"
+      a10_port: "{{ a10_port }}"
+      a10_protocol: "{{ a10_protocol }}"
+      port_number: 7080
+      protocol: tcp
+      template_port: default
+      action: enable
+      weight: 1
+      conn_limit: 1
+      stats_data_action: stats-data-enable
+      server_name: "server1"
+

@@ -1,0 +1,20 @@
+---
+- name: Create a10_slb_service_group_member instance
+  with_items:
+    - { name: "apirulez_s1", prio: "10" }
+    - { name: "apirulez_s2", prio: "10" }
+    - { name: "apirulez_s3", prio: "5" }
+    - { name: "apirulez_s4", prio: "5" }
+  a10_slb_service_group_member:
+      a10_host: "{{ inventory_hostname }}"
+      a10_username: "{{ a10_username }}"
+      a10_password: "{{ a10_password }}"
+      a10_port: "{{ a10_port }}"
+      a10_protocol: "{{ a10_protocol }}"
+      state: "{{ var_state }}"
+      service_group_name: "apirulez_v4"
+      name: "{{item.name}}"
+      port: 443
+      member_state: enable
+      member_priority: "{{item.prio}}"
+

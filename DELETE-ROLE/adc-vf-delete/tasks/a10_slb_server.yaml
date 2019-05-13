@@ -1,0 +1,19 @@
+---
+- name: Create a10_slb_server instance
+  with_together:
+    - [ 'apirulez_s1', 'apirulez_s2','apirulez_s3','apirulez_s4' ]
+    - [ '30.1.1.254', '30.1.1.255', '30.2.1.254', '30.2.1.255',   ]
+#    - "{{serverip}}"
+  a10_slb_server:
+      a10_host: "{{ inventory_hostname }}"
+      a10_username: "{{ a10_username }}"
+      a10_password: "{{ a10_password }}"
+      a10_port: "{{ a10_port }}"
+      a10_protocol: "{{ a10_protocol }}"
+      state: "{{ var_state }}"
+      host: "{{item.1}}"
+      name: "{{item.0}}"
+      port_list:
+        - protocol: "tcp"
+          port-number: 443
+          health-check: "HTTPS_apirulez.com"

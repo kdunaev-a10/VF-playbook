@@ -1,0 +1,10 @@
+- name: Create a10_slb_template_client_ssl example playbook
+  a10_slb_template_client_ssl_update:
+      a10_host: "{{ inventory_hostname }}"
+      a10_username: "{{ a10_username }}"
+      a10_password: "{{ a10_password }}"
+      a10_port: "{{ a10_port }}"
+      a10_protocol: "{{ a10_protocol }}"
+      name: CLIENT_SSL_TMPL
+      cert: "VF_TEST"
+      key: "VF_TEST"
