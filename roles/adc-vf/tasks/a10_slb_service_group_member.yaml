@@ -11,6 +11,7 @@
       a10_password: "{{ a10_password }}"
       a10_port: "{{ a10_port }}"
       a10_protocol: "{{ a10_protocol }}"
+      partition: a1
       service_group_name: "apirulez_v4"
       name: "{{item.name}}"
       port: 443
